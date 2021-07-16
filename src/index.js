@@ -134,7 +134,7 @@ for (let i = 0; i < store.products.length; i++) {
   // get product object
   const product = store.products[i];
   // get incomingDelivery from product stock
-  const incomingDelivery = store.products[i].stock.incomingDelivery;
+  const incomingDelivery = product.stock.incomingDelivery;
   // if incomingDelivery value is true, then add product object to productsThatNeedToBeReceived[]
   if (incomingDelivery === true) {
     productsThatNeedToBeReceived.push(product);
@@ -150,7 +150,7 @@ for (let i = 0; i < store.products.length; i++) {
   // get product object
   const product = store.products[i];
   // get quantity from product stock
-  const quantity = store.products[i].stock.quantity;
+  const quantity = product.stock.quantity;
   // if the quantity is equal to 0, then add product to outOfStockProducts[]
   if (quantity === 0) {
     outOfStockProducts.push(product);
@@ -167,7 +167,7 @@ for (let i = 0; i < store.products.length; i++) {
   // get product object
   const product = store.products[i];
   // get quantity from product stock
-  const quantity = store.products[i].stock.quantity;
+  const quantity = product.stock.quantity;
   // get incomingDelivery from product stock
   const incomingDelivery = store.products[i].stock.incomingDelivery;
   // if quantity is less than 100 && incomingDelivery is false, then add product to productsThatNeedToBeOrdered[]
@@ -186,7 +186,7 @@ for (let i = 0; i < store.products.length; i++) {
   // get product object
   const product = store.products[i];
   // get product type
-  const type = store.products[i].type;
+  const type = product.type;
   // if product type is 'tablet', then add product to tablets[]
   if (type === "tablet") {
     tablets.push(product);
@@ -202,7 +202,7 @@ for (let i = 0; i < store.products.length; i++) {
   // get product object
   const product = store.products[i];
   // get product type
-  const type = store.products[i].type;
+  const type = product.type;
   // if product type is 'computer', then add product to the computers[]
   if (type === "computer") {
     computers.push(product);
@@ -219,7 +219,7 @@ for (let i = 0; i < store.products.length; i++) {
   // get product object
   const product = store.products[i];
   // get product name
-  const name = store.products[i].name;
+  const name = product.name;
   // if product name is 'iMac', set it to iMac object
   if (name === "iMac") {
     iMac = product;
@@ -236,7 +236,7 @@ for (let i = 0; i < store.products.length; i++) {
   // get product object
   const product = store.products[i];
   // get product name
-  const name = store.products[i].name;
+  const name = product.name;
   // if the name of product is iPhone, set it to iPhone12 object
   if (name === "iPhone 12") {
     iPhone12 = product;
@@ -253,7 +253,7 @@ for (let i = 0; i < store.products.length; i++) {
   // get product object
   const product = store.products[i];
   // get product name
-  const name = store.products[i].name;
+  const name = product.name;
   // if the name of the product is "iPad Mini", set it to iPadMini object
   if (name === "iPad mini") {
     iPadMini = product;
