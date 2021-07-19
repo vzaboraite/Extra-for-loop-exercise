@@ -295,14 +295,64 @@ console.log("unique product types: ", productTypes);
 // An object that represents the most expensive product
 let theMostExpensiveProduct = null;
 
+// Global variable, that can be used in other functions
+let priceTracker = 0;
+
+for (let i = 0; i < products.length; i++) {
+  const product = products[i];
+  const price = product.price;
+
+  if (price > priceTracker) {
+    theMostExpensiveProduct = product;
+    priceTracker = price;
+  }
+}
+console.log("theMostExpensiveProduct: ", theMostExpensiveProduct);
+
 // An object that represents the least expensive product
 let theLeastExpensiveProduct = null;
+
+for (let i = 0; i < products.length; i++) {
+  const product = products[i];
+  const price = product.price;
+
+  if (price < priceTracker) {
+    theLeastExpensiveProduct = product;
+    priceTracker = price;
+  }
+}
+console.log("theLeastExpensiveProduct: ", theLeastExpensiveProduct);
 
 // An object that represents the most expensive product
 let theMostStockedProduct = null;
 
+// Global variable, that can be used in other functions
+let stockTracker = 0;
+
+for (let i = 0; i < products.length; i++) {
+  const product = products[i];
+  const quantity = product.stock.quantity;
+
+  if (quantity > stockTracker) {
+    theMostStockedProduct = product;
+    stockTracker = quantity;
+  }
+}
+console.log("theMostStockedProduct: ", theMostStockedProduct);
+
 // An object that represents the least expensive product
 let theLeastStockedProduct = null;
+
+for (let i = 0; i < products.length; i++) {
+  const product = products[i];
+  const quantity = product.stock.quantity;
+
+  if (quantity < stockTracker) {
+    theLeastStockedProduct = product;
+    stockTracker = quantity;
+  }
+}
+console.log("theLeastStockedProduct: ", theLeastStockedProduct);
 
 // Use the "stores" array in the challenge.js file
 // And do the above again, collecting data from all stores.
