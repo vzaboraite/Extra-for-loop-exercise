@@ -294,5 +294,17 @@ console.log("unique product types: ", productTypes);
 // Output:
 // => ["mobile", "computer", "tablet"]
 
+// An object that represents the most expensive product
+let theMostExpensiveProduct = null;
+
+// An object that represents the least expensive product
+let theLeastExpensiveProduct = null;
+
+// An object that represents the most expensive product
+let theMostStockedProduct = null;
+
+// An object that represents the least expensive product
+let theLeastStockedProduct = null;
+
 // Use the "stores" array in the challenge.js file
 // And do the above again, collecting data from all stores.
