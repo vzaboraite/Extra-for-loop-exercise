@@ -78,10 +78,6 @@ const store = {
 
 // Each section needs it's own for loop
 // DO NOT change any of the code
-/* 
---Question about the line above: 
-when we have to asign an existing object to a new object shouldn't we have to use let instead of const?
-*/
 //
 // For sections with "A list of..." the output should be an array full of objects
 // Output:
@@ -91,18 +87,20 @@ when we have to asign an existing object to a new object shouldn't we have to us
 // Output:
 // => {...}
 
+const products = store.products;
+
 // ----- Section -----
 
 // A list of products that cost more than £1000
 const expensiveProducts = [];
 
-for (let i = 0; i < store.products.length; i++) {
+for (let i = 0; i < products.length; i++) {
   // get the product object
-  const product = store.products[i];
+  const product = products[i];
   // get product price
   const price = product.price;
   // if product price is more than 1000, add product object to expensiveProduct[]
-  if (price > 1000) {
+  if (price >= 1000) {
     expensiveProducts.push(product);
   }
 }
@@ -113,9 +111,9 @@ console.log("expensiveProducts: ", expensiveProducts);
 // A list of products that cost less than £1000
 const cheapProducts = [];
 
-for (let i = 0; i < store.products.length; i++) {
+for (let i = 0; i < products.length; i++) {
   // get product object
-  const product = store.products[i];
+  const product = products[i];
   // get product price
   const price = product.price;
   // if product price is less than 1000, add product object to cheapProduct[]
@@ -130,9 +128,9 @@ console.log("cheapProducts: ", cheapProducts);
 // A list of products that have an incoming delivery
 const productsThatNeedToBeReceived = [];
 
-for (let i = 0; i < store.products.length; i++) {
+for (let i = 0; i < products.length; i++) {
   // get product object
-  const product = store.products[i];
+  const product = products[i];
   // get incomingDelivery from product stock
   const incomingDelivery = product.stock.incomingDelivery;
   // if incomingDelivery value is true, then add product object to productsThatNeedToBeReceived[]
@@ -146,9 +144,9 @@ console.log("productsThatNeedToBeReceived: ", productsThatNeedToBeReceived);
 // A list of products that are out of stock
 const outOfStockProducts = [];
 
-for (let i = 0; i < store.products.length; i++) {
+for (let i = 0; i < products.length; i++) {
   // get product object
-  const product = store.products[i];
+  const product = products[i];
   // get quantity from product stock
   const quantity = product.stock.quantity;
   // if the quantity is equal to 0, then add product to outOfStockProducts[]
@@ -163,13 +161,13 @@ console.log("outOfStockProducts: ", outOfStockProducts);
 // A list of products that have a quantity that is less than 100 and have no incoming delivery
 const productsThatNeedToBeOrdered = [];
 
-for (let i = 0; i < store.products.length; i++) {
+for (let i = 0; i < products.length; i++) {
   // get product object
-  const product = store.products[i];
+  const product = products[i];
   // get quantity from product stock
   const quantity = product.stock.quantity;
   // get incomingDelivery from product stock
-  const incomingDelivery = store.products[i].stock.incomingDelivery;
+  const incomingDelivery = products[i].stock.incomingDelivery;
   // if quantity is less than 100 && incomingDelivery is false, then add product to productsThatNeedToBeOrdered[]
   if (quantity < 100 && incomingDelivery === false) {
     productsThatNeedToBeOrdered.push(product);
@@ -182,9 +180,9 @@ console.log("productsThatNeedToBeOrdered: ", productsThatNeedToBeOrdered);
 // A list of products of the type "tablet"
 const tablets = [];
 
-for (let i = 0; i < store.products.length; i++) {
+for (let i = 0; i < products.length; i++) {
   // get product object
-  const product = store.products[i];
+  const product = products[i];
   // get product type
   const type = product.type;
   // if product type is 'tablet', then add product to tablets[]
@@ -198,9 +196,9 @@ console.log("tablets: ", tablets);
 // A list of products of the type "computer"
 const computers = [];
 
-for (let i = 0; i < store.products.length; i++) {
+for (let i = 0; i < products.length; i++) {
   // get product object
-  const product = store.products[i];
+  const product = products[i];
   // get product type
   const type = product.type;
   // if product type is 'computer', then add product to the computers[]
@@ -215,9 +213,9 @@ console.log("computers: ", computers);
 // An object that represents an "iMac"
 let iMac = null;
 
-for (let i = 0; i < store.products.length; i++) {
+for (let i = 0; i < products.length; i++) {
   // get product object
-  const product = store.products[i];
+  const product = products[i];
   // get product name
   const name = product.name;
   // if product name is 'iMac', set it to iMac object
@@ -232,9 +230,9 @@ console.log("iMac object: ", iMac);
 // An object that represents an "iPhone 12"
 let iPhone12 = null;
 
-for (let i = 0; i < store.products.length; i++) {
+for (let i = 0; i < products.length; i++) {
   // get product object
-  const product = store.products[i];
+  const product = products[i];
   // get product name
   const name = product.name;
   // if the name of product is iPhone, set it to iPhone12 object
@@ -249,9 +247,9 @@ console.log("iPhone12 object: ", iPhone12);
 // An object that represents an "iPad mini"
 let iPadMini = null;
 
-for (let i = 0; i < store.products.length; i++) {
+for (let i = 0; i < products.length; i++) {
   // get product object
-  const product = store.products[i];
+  const product = products[i];
   // get product name
   const name = product.name;
   // if the name of the product is "iPad Mini", set it to iPadMini object
@@ -266,9 +264,9 @@ console.log("iPadMini object: ", iPadMini);
 // A list of unique product types
 const productTypes = [];
 
-for (let i = 0; i < store.products.length; i++) {
+for (let i = 0; i < products.length; i++) {
   // get product object
-  const product = store.products[i];
+  const product = products[i];
   // get product type
   const type = product.type;
   // if productTypes[] doesn't have unique product type, then add it to productTypes[]
